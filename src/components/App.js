@@ -7,6 +7,7 @@ import Dashboard from "../views/Dashboard";
 import Login from "../views/Login";
 import SignUp from "../views/SignUp";
 import NotFound from "../views/404";
+import navBar from "../views/Navbar"
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route exact path={"/Dashboard"} component={Dashboard} />
           <Route exact path={"/Login"} component={Login} />
           <Route exact path={"/SignUp"} component={SignUp} />
+          <Route exact path={"/navBar"} component={navBar} />
           <Route exact path={"*"} component={NotFound} />
         </Switch>
       </Router>

@@ -5,8 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { useStyles } from "../../styles/lib/header.styles";
-import { NavLink } from 'react-router-dom';
+import { useStyles } from "../styles/lib/header.styles";
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     const classes = useStyles();
@@ -21,7 +21,12 @@ const Header = () => {
                     <Typography variant="h6" className={classes.title}>
                         More
           </Typography>
-                    <Button><NavLink to='/navbar'>Get Started</NavLink></Button>
+
+                    <Button > <Link to='/'>Home</Link></Button>
+                    <Button><NavLink to='/login'>Login</NavLink></Button>
+                    <Button><NavLink to='/about'>About</NavLink></Button>
+                    <Button><NavLink to='/contact'>Contact</NavLink></Button>
+
                 </Toolbar>
             </AppBar>
         </div>

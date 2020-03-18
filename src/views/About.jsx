@@ -1,9 +1,11 @@
 import React from 'react'
+import NavBar from './Navbar'
 
-function About(props) {
+function About() {
     return (
         <div>
-            About Us
+            <NavBar />
+            <h1>About Us</h1><br/>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, odit? Velit distinctio quia, quod id dicta inventore exercitationem ducimus! Praesentium nostrum dicta autem vitae quia officiis voluptatem neque debitis accusantium?
         </div>
     )
