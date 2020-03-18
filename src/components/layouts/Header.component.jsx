@@ -19,7 +19,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            More
           </Typography>
           <Button color="inherit">Get Started</Button>
         </Toolbar>
