@@ -10,5 +10,17 @@ export const useStyles = makeStyles(theme => ({
     title: {
       flexGrow: 1,
     },
+    links:{
+        textDecoration: 'none',
+        color: 'white',
+        fontSize: 15,
+        fontFamily: 'roboto',
+    },
+    getStarted:{
+        textDecoration: 'none',
+        color: 'white',
+        fontSize: 15,
+        border: 'white',
+    }
   }));
   

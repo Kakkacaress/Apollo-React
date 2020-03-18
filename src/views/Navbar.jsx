@@ -22,10 +22,10 @@ const Header = () => {
                         More
           </Typography>
 
-                    <Button > <Link to='/'>Home</Link></Button>
-                    <Button><NavLink to='/login'>Login</NavLink></Button>
-                    <Button><NavLink to='/about'>About</NavLink></Button>
-                    <Button><NavLink to='/contact'>Contact</NavLink></Button>
+                   <Button ><NavLink className={classes.links} to='/'>Home</NavLink></Button>
+                    {/* <Button><NavLink className={classes.links} to='/login'>Login</NavLink></Button> */}
+                    <Button><NavLink className={classes.links} to='/about'>About</NavLink></Button>
+                    <Button><NavLink className={classes.links} to='/contact'>Contact</NavLink></Button>
 
                 </Toolbar>
             </AppBar>

@@ -21,7 +21,9 @@ const Header = () => {
                     <Typography variant="h6" className={classes.title}>
                         More
           </Typography>
-                    <Button><NavLink to='/navbar'>Get Started</NavLink></Button>
+                    <Button><NavLink className={classes.links} to='/about'>About</NavLink></Button>
+                    <Button><NavLink className={classes.links} to='/contact'>Contact</NavLink></Button>
+                    <Button><NavLink className={classes.getStarted} to='/login'>Get Started</NavLink></Button>
                 </Toolbar>
             </AppBar>
         </div>
