@@ -9,6 +9,7 @@ export const useStyles = makeStyles(theme => ({
     },
     title: {
       flexGrow: 1,
+      fontFamily:  'Dancing Script, cursive',
     },
     links:{
         textDecoration: 'none',
@@ -20,7 +21,14 @@ export const useStyles = makeStyles(theme => ({
         textDecoration: 'none',
         color: 'white',
         fontSize: 15,
-        border: 'white',
-    }
-  }));
+        border: '1px solid white',
+        padding: '8px 10px',
+        marginRight: 30,
+        '&:hover':{
+          color: 'red',
+          border: 'none',
+          backgroundColor: 'white',
+        },
+    },
+}))
   
