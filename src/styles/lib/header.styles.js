@@ -15,7 +15,11 @@ export const useStyles = makeStyles(theme => ({
         textDecoration: 'none',
         color: 'white',
         fontSize: 15,
-        fontFamily: 'roboto',
+        // fontFamily: 'roboto',
+        '&:hover':{
+          color: 'white',
+          opacity: 0.7,
+        },
     },
     getStarted:{
         textDecoration: 'none',
@@ -25,9 +29,11 @@ export const useStyles = makeStyles(theme => ({
         padding: '8px 10px',
         marginRight: 30,
         '&:hover':{
-          color: 'red',
-          border: 'none',
-          backgroundColor: 'white',
+          color: 'white',
+          opacity: 0.7,
+          borderRadius: 5,
+          // border: 'none',
+          // backgroundColor: 'white',
         },
     },
 }))

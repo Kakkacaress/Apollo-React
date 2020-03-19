@@ -73,7 +73,7 @@ export default function SignIn() {
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            label={<p className={classes.links}>Remember me</p>}
           />
           <Button
             type="submit"
@@ -82,16 +82,16 @@ export default function SignIn() {
             color="primary"
             className={classes.submit}
           >
-            Log In
+            <Link className={classes.login} to='/Dashboard'>Log In</Link>
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link  variant="body2">
+              <Link className={classes.links}  variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link to="/SignUp" variant="body2">
+              <Link className={classes.links}  to="/SignUp" variant="body2">
                 Don't have an account? Sign Up
               </Link>
             </Grid>
@@ -106,10 +106,11 @@ export default function SignIn() {
 }
 // ------------------------------form footer--------------------------------------------------------
 function Copyright() {
+  const classes = useStyles(); //calling the formstyles defined below.
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" to='/home'>
+      <Link className={classes.links} color="inherit" to='/home'>
         Learn Factory
       </Link>{" "}
       {new Date().getFullYear()}
@@ -136,5 +137,18 @@ const useStyles = makeStyles(theme => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
+  },
+  links:{
+    color: '#880e4f',
+    textDecoration: 'none',
+    '&:hover':{
+      opacity: .7
+    }},
+  login:{
+    color: 'white',
+    textDecoration: 'none',
+    '&:hover':{
+      opacity: .7
+  }  
   }
 }));
