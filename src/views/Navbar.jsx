@@ -19,7 +19,7 @@ const Header = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        More
+                       Tribr
           </Typography>
 
                    <Button ><NavLink className={classes.links} to='/'>Home</NavLink></Button>
