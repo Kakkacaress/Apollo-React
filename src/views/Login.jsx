@@ -14,24 +14,26 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom"
+import { Formik,  Form } from 'formik'
+
 
 
 export default function SignIn() {
   const classes = useStyles(); //calling the formstyles defined below.
 
-  const [state, setState] = React.useState({
-    email: '',
-    password: '',
-  })
+//   const [state, setState] = React.useState({
+//     email: '',
+//     password: '',
+//   })
 
- const handleSubmit = (e) =>{
-   e.preventDefault()
-  console.log(state.email, state.password);
- }
-//  const handleChange = ({target: {value}}) => setState(value);
- const handleChange =({target})=> {
-  setState(prevState => ({...prevState, [target.name]: target.value}))
- }
+//  const handleSubmit = (e) =>{
+//    e.preventDefault()
+//   console.log(state.email, state.password);
+//  }
+// //  const handleChange = ({target: {value}}) => setState(value);
+//  const handleChange =({target})=> {
+//   setState(prevState => ({...prevState, [target.name]: target.value}))
+//  }
 
   return (<>
       <NavBar />
@@ -44,7 +46,15 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} onSubmit={handleSubmit} noValidate>
+
+        <Formik
+    initialValues={{
+      email: '',
+      password: '',
+    }}
+    onSubmit={values => {console.log(values);}}
+    render={(props) => (
+        <Form className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -53,8 +63,8 @@ export default function SignIn() {
             id="email"
             label="Email Address"
             name="email"
-            value={state.email}
-            onChange={handleChange}
+            // value={state.email}
+            onChange={props.handleChange}
             autoComplete="email"
             autoFocus
           />
@@ -64,8 +74,8 @@ export default function SignIn() {
             required
             fullWidth
             name="password"
-            value={state.password}
-            onChange={handleChange}
+            // value={state.password}
+            onChange={props.handleChange}
             label="Password"
             type="password"
             id="password"
@@ -96,7 +106,10 @@ export default function SignIn() {
               </Link>
             </Grid>
           </Grid>
-        </form>
+        </Form>
+         )}
+         />
+  {/*formik ends here*/}
       </div>
       <Box mt={8}>
         <Copyright />
@@ -110,7 +123,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link className={classes.links} color="inherit" to='/home'>
+      <Link className={classes.links} color="inherit" to='/'>
         Learn Factory
       </Link>{" "}
       {new Date().getFullYear()}

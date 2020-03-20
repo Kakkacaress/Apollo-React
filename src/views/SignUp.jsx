@@ -14,13 +14,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import NavBar from"./Navbar";
 import {NavLink, Link } from "react-router-dom"
+import { Formik,  Form } from 'formik'
 
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" >
       Learn Factory
       </Link>{' '}
       {new Date().getFullYear()}
@@ -63,18 +64,30 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+
+        <Formik
+    initialValues={{
+
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+    }}
+    onSubmit={values => {console.log(values);}}
+    render={(props) => (
+        <Form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField
+             <TextField
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
+                // id="firstName"
                 label="First Name"
                 autoFocus
+                onChange={props.handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -82,10 +95,11 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                id="lastName"
+                // id="lastName"
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onChange={props.handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -93,10 +107,11 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
+                // id="email"
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={props.handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -105,10 +120,11 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                // label="Password"
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={props.handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -134,7 +150,11 @@ export default function SignUp() {
               </NavLink>
             </Grid>
           </Grid>
-        </form>
+        </Form>
+        )}
+        />
+          {/*formik ends here*/}
+
       </div>
       <Box mt={5}>
         <Copyright />

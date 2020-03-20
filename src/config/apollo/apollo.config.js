@@ -12,8 +12,8 @@ console.log("token", token);
 
 //Setup apollo client
 const client = new ApolloClient({
-  uri: SERVER_URL,
-  cache,
+  uri: SERVER_URL,  //the server where we are requesting from. either local or remote
+  cache, //our Apollo local storage
   headers: {// Apollo client can still work without this headers
     authorization: token
   },
