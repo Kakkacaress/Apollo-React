@@ -1,6 +1,6 @@
 import ApolloClient, { InMemoryCache } from "apollo-boost";
 import { ToastMessage, type } from "../../helpers/toatser/Toastr.helper";
-import { SERVER_URL } from "../../constants/endpoints.contants";
+import {SERVER_URL} from '../../constants/endpoints.contants'
 
 //Setup a new cache memory
 const cache = new InMemoryCache();
@@ -12,10 +12,9 @@ console.log("token", token);
 
 //Setup apollo client
 const client = new ApolloClient({
-  uri: SERVER_URL, //the server where we are requesting from. either local or remote
+  uri: SERVER_URL,  //the server where we are requesting from. either local or remote
   cache, //our Apollo local storage
-  headers: {
-    // Apollo client can still work without this headers
+  headers: {// Apollo client can still work without this headers
     authorization: token
   },
   onError: ({ graphQLErrors, networkError, operation }) => {
